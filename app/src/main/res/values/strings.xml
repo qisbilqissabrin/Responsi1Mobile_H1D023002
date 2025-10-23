@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Responsi 1 Mobile H1D023002</string>
+    <string name="nama_club">Racing Club de Lens</string>
+    <string name="rcl_description">
+        "Racing Club de Lens was founded in 1906 by students in Lens, France. The club's history is deeply connected to the city's coal mining heritage, reflected in its original green and black colors and later the "blood and gold" nickname, which has two popular origin stories. RC Lens won its first and only Ligue 1 title in the 1997-1998 season and has a strong rivalry with Lille OSC, known as the Derby du Nord."
+    </string>
+    <string name="bola">History</string>
+    <string name="coach">Head Coach</string>
+    <string name="squad">Team Squad</string>
+    <string name="history">
+           "    Racing Club de Lens, founded in 1906, is one of the most historic football clubs in Northern France, with roots deeply tied to the region's coal mining community. Their nickname, "Les Sang et Or" (The Blood and Gold), refers not only to the colors of their proud jerseys but also to the club's spirit: red represents the blood of the hard-working miners, while gold symbolizes the prosperity of coal. This bond is so strong that the club's crest often includes a miner's lamp as a symbol of their heritage and the values ​​of struggle, solidarity, and humility they uphold.
+
+    Initially, Lens spent most of their time in the amateur leagues, before finally turning professional in 1934 and gaining promotion to Division 1 (now Ligue 1) in 1937, playing at their home ground, Stade Bollaert-Delelis. The club has been known for its ups and downs, bouncing back and forth between the top flight and the second tier (Ligue 2). However, their golden era arrived in the latter half of the 1990s.
+
+    Their most memorable highlight was the 1997–98 season, when they surprisingly secured the Ligue 1 title, their only major league title ever, defeating a number of established and major teams. This victory, achieved with a solid squad without many big names, reflected the club's collective work ethic. That same season, they also nearly achieved a double, reaching the final of the Coupe de France (French Cup). This success propelled Lens into the UEFA Champions League, where they performed impressively. Lens also boasted a remarkable European record, including reaching the semifinals of the UEFA Cup (now the Europa League) in the 1999–90 season, before being eliminated by Arsenal.
+
+    After this golden period, the club again endured difficult times, suffering several relegations. However, since their promotion back in 2020, RC Lens have once again become a force to be reckoned with in Ligue 1. Under stable leadership and management, the club once again demonstrated their underdog spirit and managed to finish as runners-up in Ligue 1 in the 2022–23 season, just one point behind Paris Saint-Germain, an achievement that proves that the club's legacy as an embodiment of the never-say-die spirit of northern France is still very much alive."
+    </string>
+</resources>
