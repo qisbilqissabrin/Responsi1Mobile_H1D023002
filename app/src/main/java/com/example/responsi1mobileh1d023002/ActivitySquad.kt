@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.responsi1mobileh1d023002.adapter.PlayerAdapter // Pastikan import ini benar
+import com.example.responsi1mobileh1d023002.adapter.PlayerAdapter
 import com.example.responsi1mobileh1d023002.data.model.Player
-import com.example.responsi1mobileh1d023002.databinding.ActivitySquadBinding // Import binding class
+import com.example.responsi1mobileh1d023002.databinding.ActivitySquadBinding
 import com.example.responsi1mobileh1d023002.ui.dialog.PlayerDetailsBottomSheet
 import com.example.responsi1mobileh1d023002.viewmodel.MainViewModel
 
@@ -17,7 +17,7 @@ class ActivitySquad : AppCompatActivity() {
     private lateinit var binding: ActivitySquadBinding
     private val viewModel: MainViewModel by viewModels()
     private lateinit var playerAdapter: PlayerAdapter
-    private val TEAM_ID = 346
+    private val TEAM_ID = 546
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
