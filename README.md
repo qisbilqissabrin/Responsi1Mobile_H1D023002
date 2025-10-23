@@ -14,34 +14,25 @@
 
 
 
-https://github.com/user-attachments/assets/c0d42995-35d8-46e0-8f08-329f33f4ac38
+https://github.com/user-attachments/assets/497fc779-4ea1-45ca-acc0-48aa0d617ebe
+
+
 
 
 ---
 
 ## Penjelasan Alur Data (API ke Layar)
 
-Alur data pada aplikasi ini dirancang untuk memisahkan logika bisnis dari tampilan, dimulai dari pemanggilan API hingga penyajian data di layar pengguna.
+* Inisiasi Permintaan Data : Alur dimulai ketika tampilan (UI/Layar) aplikasi memerlukan data baru. Ini bisa dipicu saat pengguna membuka screen tertentu atau melakukan aksi seperti menekan tombol refresh. Layar akan meminta data ini dari layer di aplikasi yang bertugas menangani logika bisnis.
 
-1.  *Inisiasi (Trigger)*
-    * Alur dimulai ketika pengguna melakukan aksi (misalnya, menekan tombol) atau saat layar pertama kali dimuat (misalnya, dalam onCreate, onViewCreated, atau useEffect).
+* Pemanggilan ke API : Aplikasi kemudian menyusun permintaan formal (berupa request HTTP) ke alamat API spesifik di server. Proses ini dijalankan oleh layer jaringan di aplikasi Android Studio.
 
-2.  *Pemanggilan API (Request)*
-    * Lapisan UI (Activity/Fragment/Composable) memanggil sebuah fungsi pada lapisan logika (misalnya, *ViewModel* atau *Presenter*).
-    * ViewModel kemudian memanggil fungsi dari *Repository*.
-    * Repository bertanggung jawab untuk menentukan sumber data. Dalam kasus ini, ia memanggil *Layanan API* (misalnya, yang dibuat dengan Retrofit, Ktor, atau Dio).
-    * Layanan API (menggunakan HTTP Client) membuat panggilan jaringan (HTTP GET, POST, dll.) ke endpoint API yang spesifik di server.
+* Penerimaan Data Mentah (JSON Response): Server merespons dengan mengirimkan data yang diminta. Data ini umumnya berbentuk teks terstruktur yang padat, yaitu JSON. Data JSON ini adalah raw data yang kembali diterima oleh aplikasi Android.
 
-3.  *Respons dan Parsing Data*
-    * Server API menerima permintaan, memprosesnya, dan mengirimkan kembali respons, biasanya dalam format *JSON*.
-    * HTTP Client di aplikasi menerima data JSON mentah tersebut.
-    * Data JSON ini kemudian di-parsing (dideserialisasi) menjadi data model (sering disebut Pojo atau Data Class) yang telah didefinisikan di dalam aplikasi.
+* Transformasi Data (Parsing): Data JSON yang diterima tidak dapat langsung ditampilkan. Aplikasi harus melakukan proses parsing atau deserialization. Dalam proses ini, teks JSON diuraikan, dan setiap elemen data (misalnya, nama produk, harga, deskripsi) diubah menjadi objek data (model) yang terstruktur dan siap digunakan oleh kode program Android.
 
-4.  *Manajemen State (State Management)*
-    * Repository meneruskan objek data yang sudah di-parsing kembali ke ViewModel.
-    * ViewModel memperbarui state (keadaan) aplikasi dengan data baru ini. Ini bisa menggunakan mekanisme seperti LiveData, StateFlow, Provider, atau useState.
-    * ViewModel juga menangani status lain, seperti Loading (saat menunggu data) atau Error (jika panggilan API gagal).
+* Penyajian di Layar (Display): Objek data yang sudah bersih dan terstruktur ini kemudian dikirim kembali ke Layar (UI). Komponen-komponen UI (seperti TextView, RecyclerView, atau ImageView) mengambil nilai dari objek data tersebut dan menyajikannya secara visual kepada pengguna.
 
-5.  *Penyajian di Layar (Render)*
-    * Lapisan UI (Activity/Fragment) secara aktif "mengamati" (observe) perubahan pada state di ViewModel.
-    * Ketika state berubah (misalnya, dari Loading menjadi Success dengan data baru), UI akan secara otomatis memperbarui dirinya sendiri (re-render atau re-compose) untuk menampilkan data baru tersebut kepada pengguna (misalnya, mengisi RecyclerView atau ListView).
+Singkatnya:
+
+Layar Minta -> Aplikasi Kirim API -> Server Beri JSON -> Aplikasi Parse Jadi Objek -> Objek Tampil di Layar.
